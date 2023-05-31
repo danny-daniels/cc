@@ -1,0 +1,18 @@
+right setting > setup > create > custom tab > create a new custom object now > label Book > plural label Books > Filds & relationship > click on New > select Number of the datatype and next > Enter Price for the field Label > 16 in length > 2 in decimal places > next & next & save >search apex classes > new >
+
+public class MyHelloWorld{
+public static void applyDiscount(Book__c[] books)
+{
+   for(Book__c b:books)
+         {b.Prise__c*=0.9;}
+         }
+         }
+> save > home > Most Recently Used object click on Book > scroll left details and click on trigger > new > 
+
+trigger HelloWordTrigger on Nbook__c (before insert)
+{
+Nbook__c[] nbooks = Trigger.new;
+MyHelloWorld.applyDiscount(nbooks);
+}
+
+> click on save > home > create > custom tab > choose Book > next &next & save 
